@@ -1,0 +1,139 @@
+.hero {
+    height: calc(100vh - 100px);
+    background: white;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* gap: 5rem; */
+    margin: 0 10%;
+    border: 5px solid;
+
+}
+
+.wrapper {
+    max-width: 1200px;
+    height: 100%;
+    margin: auto;
+}
+
+.imageContainer{
+    display: flex;
+    /* height: 300px; */
+    /* width: 200px; */
+    width: 22%;
+    height: 50%;
+    margin: auto 0;
+
+    animation-name: floating;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0, -20px);
+    }
+    50% {
+        transform: translate(0, 20px);
+    }
+    100% {
+        transform: translate(0, -20px);
+    }
+}
+.imageContainer img{
+    border-radius: 30%;
+}
+
+.wrapper .textContainer {
+    /* align-self: center;
+    text-align: center; */
+    /* width: 80%;  */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    color: black;
+}
+
+.wrapper h2 {
+    font-size: 30px;
+    /* color: green; */
+    letter-spacing: 10px;
+    font-weight: 600;
+    text-align: center;
+}
+ 
+.wrapper h1 {
+    font-size: 88px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.wrapper .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.wrapper .buttons button {
+    padding: 20px;
+    border: rgb(53,53,53) 0.1rem solid;
+    border-radius: 10px;
+    background-color: transparent;
+    color: black;
+    margin-right: 20px;
+    font-weight: 600;
+    transition: all 300ms ease;
+}
+
+.wrapper .buttons .button1:hover,
+.wrapper .buttons .button2:hover {
+    cursor: pointer;
+}
+
+.wrapper .buttons .button1,
+.wrapper .buttons .button2:hover {
+    background: rgb(53,53,53);
+    color: white;
+}
+
+.wrapper .buttons .button1:hover {
+    background: rgb(255, 255, 255);
+    color: black;
+}
+
+.wrapper .buttons .button2 {
+    background: none;
+}
+
+.wrapper .buttons .button2:hover {
+    background: rgb(255,255,255) 0.1rem solid;
+}
+
+
+.hero .slidingTextContainer {
+    position: absolute;
+    font-size: 50vh;
+    bottom: -120px;
+    white-space: nowrap;
+    color: #ffffff09;
+    width: 50%;
+    font-weight: bold;
+}
+.socialsContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.socialsContainer img{
+    max-width: 100px;
+}
+.icon {
+    cursor: pointer;
+    height: 2rem;
+}

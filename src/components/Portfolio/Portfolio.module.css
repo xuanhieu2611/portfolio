@@ -1,0 +1,87 @@
+.portfolio {
+    position: relative;
+}
+
+.portfolio .progress {
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding-top: 50px;
+    text-align: center;
+    color: orange;
+    font-size: 36px;
+}
+
+.portfolio .progressBar {
+    height: 10px;
+    background-color: rgb(181,181,181);
+}
+
+.portfolio .container {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.portfolio .container .wrapper {
+    max-width: 1366px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+
+}
+.portfolio .container .wrapper .imgContainer {
+    flex: 1;
+    height: 50%;
+}
+.portfolio .container .wrapper .imgContainer img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 5px solid;
+}
+.portfolio .container .wrapper .textContainer{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.portfolio .container .wrapper .textContainer h2{
+    font-size: 72px;
+
+}
+
+.portfolio .container .wrapper .textContainer p{
+    color: gray;
+    font-size: 20px;
+}
+
+.portfolio .container .wrapper .textContainer .buttonContainer{
+    display: flex;
+    gap: 20px;
+}
+
+.portfolio .container .wrapper .textContainer button{
+    background-color: orange;
+    border-radius: 10px;
+    padding: 10px;
+    width: 200px;
+    cursor: pointer;
+}
+.portfolio .container .wrapper .textContainer .iconButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.portfolio .container .wrapper .textContainer .iconButton img{
+    width: 20px;
+    height: 20px;
+}

@@ -13,24 +13,17 @@ const items = [
     },
     {
         id:2,
-        title:"Next.js",
-        img:"https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350",
-        description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus modi ullam, tempora reiciendis quisquam quod?",
-        githubLink: "https://github.com/xuanhieu2611/VitAlert",
+        title:"UBC Insight Website",
+        img:"/ubc.png",
+        description:"This is my CPSC 311 project - a full stack web allows users effectively query historical data regarding the university’s sections and rooms. I was mainly responsible for the back-end including creating RESTful API, load, validate, and parse data to process",
+        githubLink: "https://github.com/xuanhieu2611/UBC-grade-insight",
     },
     {
         id:3,
-        title:"JavaScript",
-        img:"https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350",
-        description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus modi ullam, tempora reiciendis quisquam quod?",
-        githubLink: "https://github.com/xuanhieu2611/VitAlert",
-    },
-    {
-        id:4,
-        title:"Music",
-        img:"https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350",
-        description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus modi ullam, tempora reiciendis quisquam quod?",
-        githubLink: "https://github.com/xuanhieu2611/VitAlert",
+        title:"Portfolio Website",
+        img:"/portfolio.png",
+        description:"A website that displays my personal information, contacts, and my projects",
+        githubLink: "https://github.com/xuanhieu2611/portfolio",
     }
 ]
 

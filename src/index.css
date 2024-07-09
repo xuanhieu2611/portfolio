@@ -1,35 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html {
-  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  /* background-color: blue; */
-}
-
-p {
-  color: rgb(85,85,85);
-}
-
-a, .btn {
-  transition: all 300ms ease;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
+  list-style: none;
+  font-family: "Roboto", sans-serif;
 }
 
 section {
   height: 100vh;
-  scroll-snap-align: center;
+}
+
+.dashing_button{
+  color: #000000;
+  /* background-color: #08AEEA; */
+  background-image: linear-gradient(90deg, #08AEEA, #2AF598,#08AEEA, #2AF598);
+  background-size: 300% 300%;
+  animation: bg 10s ease-in-out infinite;
+}
+.dashing_button:hover {
+  animation: bg 2s ease-in-out infinite;
+}
+@keyframes bg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

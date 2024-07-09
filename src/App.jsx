@@ -1,26 +1,24 @@
-import Hero from "./components/Hero/Hero"
-import Navbar from "./components/Navbar/Navbar"
-import About from "./components/About/About"
-import Portfolio from "./components/Portfolio/Portfolio"
-import Contact from "./components/Contact/Contact"
-import Footer from "./components/Footer/Footer"
+
+import About from "./components/About"
+import Projects from "./components/Projects"
+import Contact from "./components/Contact"
+import Footer from "./components/Footer"
+import Header from "./components/Header"
+import Hero from "./components/Hero"
 
 function App() {
-  return (<>
-    <section id="Homepage">
-      <Navbar/>
-      {/* <Sidebar/> */}
-      <Hero/>
-    </section>
-    <section id="About">
+  return (
+    <div className="bg-gray-50 text-gray-950">
+      <section id="Homepage">
+        <Header />
+        <Hero />
+      </section>
       <About/>
-    </section>
-    <Portfolio/>
-    <section id="Contact">
+      <Projects/>
       <Contact/>
       <Footer/>
-    </section>
-  </>)
+    </div>
+  )
 }
 
 export default App

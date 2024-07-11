@@ -1,4 +1,4 @@
-import React from 'react'
+import { motion } from "framer-motion"
 
 const items = [
     {
@@ -36,24 +36,82 @@ const items = [
 export default function Projects() {
   return (
     <div id="Projects" className='pt-20'>
-        <h1 className='text-center font-bold tracking-wide text-4xl'>Projects</h1>
+        <motion.h1 
+            whileInView={{opacity:1, y:0}}
+            initial={{opacity:0, y:-100}}
+            transition={{duration:0.5}}
+            viewport={{
+                once:true
+            }}
+            className='text-center font-bold tracking-wide text-4xl'
+        >
+            Projects
+        </motion.h1>
         {items && items.map((item,index) => (
             <div key={item.id} className='flex flex-col items-center justify-between mx-auto my-20 lg:flex-row lg:w-3/4 lg:mb-40'>
-                {index%2==0 && <img src={item.img} alt="Project picture" className='hidden lg:inline rounded-lg w-[500px] h-auto shadow-[0_0_16px]'/>}
-                <img src={item.img} alt="Project picture" className='lg:hidden rounded-lg w-[500px] h-auto shadow-[0_0_16px]'/>
+                {index%2==0 && <motion.img 
+                    whileInView={{opacity:1, y:0}}
+                    initial={{opacity:0, y:100}}
+                    transition={{duration:1}}
+                    viewport={{
+                        once:true
+                    }}
+                    src={item.img} alt="Project picture" className='hidden lg:inline rounded-lg w-[500px] h-auto shadow-[0_0_16px]'
+                />}
+                <motion.img 
+                    whileInView={{opacity:1, x:0}}
+                    initial={{opacity:0, x:-100}}
+                    transition={{duration:1}}
+                    viewport={{
+                        once:true
+                    }}
+                    src={item.img} alt="Project picture" className='lg:hidden rounded-lg w-[500px] h-auto shadow-[0_0_16px]'
+                />
                 <div className='flex flex-col'>
-                    <p className='p-5 text-center [text-wrap:balance]'>{item.description}</p>
+                    <motion.p 
+                        whileInView={{opacity:1, y:0}}
+                        initial={{opacity:0, y:100}}
+                        transition={{duration:1}}
+                        viewport={{
+                            once:true
+                        }}
+                        className='p-5 text-center [text-wrap:balance]'>{item.description}
+                    </motion.p>
                     <div className='flex gap-5 items-center justify-center'>
-                        <button className='flex items-center justify-center gap-2 rounded-xl px-4 py-1 dashing_button hover:scale-105' onClick={() => (window.open(`${item.githubLink}`))}>
+                        <motion.button
+                            whileInView={{opacity:1, y:0}}
+                            initial={{opacity:0, y:100}}
+                            transition={{duration:1, delay:0.2}} 
+                            viewport={{
+                                once:true
+                            }}
+                            className='flex items-center justify-center gap-2 rounded-xl px-4 py-1 dashing_button hover:scale-105' onClick={() => (window.open(`${item.githubLink}`))}
+                        >
                             <img className="w-5 h-5" src="/github.svg.png" alt="github icon" />
                             <span>Github</span>
-                        </button>
-                        <button className="border-0 rounded-xl px-2 py-1 shadow-[0_0_12px_4px_#22c55e] text-green-500 hover:shadow-[0_0_8px_6px_#22c55e] hover:scale-105" onClick={() => (window.open(`${item.link}`))}>
+                        </motion.button>
+                        <motion.button 
+                            whileInView={{opacity:1, y:0}}
+                            initial={{opacity:0, y:100}}
+                            transition={{duration:1, delay:0.4}}
+                            viewport={{
+                                once:true
+                            }}
+                            className="border-0 rounded-xl px-2 py-1 shadow-[0_0_12px_4px_#22c55e] text-green-500 hover:shadow-[0_0_8px_6px_#22c55e] hover:scale-105" onClick={() => (window.open(`${item.link}`))}
+                        >
                             Visit Website
-                        </button>
+                        </motion.button>
                     </div>
                 </div>
-                {index%2==1 && <img src={item.img} alt="Project picture" className='hidden lg:inline rounded-lg w-[500px] h-auto shadow-[0_0_16px]'/>}
+                {index%2==1 && <motion.img
+                    whileInView={{opacity:1, y:0}}
+                    initial={{opacity:0, y:100}}
+                    transition={{duration:1}} 
+                    viewport={{
+                        once:true
+                    }}
+                    src={item.img} alt="Project picture" className='hidden lg:inline rounded-lg w-[500px] h-auto shadow-[0_0_16px]'
+                />}
             </div>
         ))}
     </div>

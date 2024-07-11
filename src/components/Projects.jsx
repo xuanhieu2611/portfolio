@@ -35,7 +35,7 @@ const items = [
 
 export default function Projects() {
   return (
-    <div id="Projects" className='pt-20'>
+    <div id="Projects" className='pt-24'>
         <motion.h1 
             whileInView={{opacity:1, y:0}}
             initial={{opacity:0, y:-100}}

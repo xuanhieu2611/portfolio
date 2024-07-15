@@ -48,7 +48,7 @@ export default function Projects() {
             Projects
         </motion.h1>
         {items && items.map((item,index) => (
-            <div key={item.id} className='flex flex-col items-center justify-between mx-auto my-20 lg:flex-row lg:w-3/4 lg:mb-40'>
+            <div key={item.id} className='flex flex-col items-center justify-between mx-auto my-20 lg:flex-row lg:w-3/4 lg:mb-40 2xl:w-3/5'>
                 {index%2==0 && <motion.img 
                     whileInView={{opacity:1, y:0}}
                     initial={{opacity:0, y:100}}

@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 
 export default function About() {
   return (
-    <div className="w-3/4 h-full mx-auto pt-24" id="About">
+    <div className="w-3/4 h-full mx-auto pt-24 2xl:w-2/4" id="About">
         <motion.h2 
             whileInView={{opacity:1, y:0}}
             initial={{opacity:0, y:-100}}

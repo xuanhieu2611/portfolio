@@ -39,13 +39,13 @@ export default function About() {
           }}
           className="flex flex-col gap-5 mt-5 lg:mt-0 lg:gap-16"
         >
-          <p className="text-center [text-wrap:balance] font-normal sm:text-left">
+          <p className="text-center font-normal sm:text-left max-w-[520px]">
             I'm currently pursuing Bachelor's Degree in <b>Computer Science</b>{" "}
             at the University of British Columbia and actively seeking an{" "}
             <b>Internship/Co-op</b> position as a <b>Full Stack Developer</b> or{" "}
             <b>Data Scientist</b>
           </p>
-          <p className="text-center [text-wrap:balance] font-normal sm:text-left">
+          <p className="text-center font-normal sm:text-left max-w-[520px]">
             When <i>I'm not doing</i>, I enjoy playing basketball 🏀 and going
             to the gym 🏋️
           </p>

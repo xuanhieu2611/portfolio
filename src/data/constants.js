@@ -1,6 +1,26 @@
 export const projects = [
   {
     id: 1,
+    title: "Caption Generator",
+    img: "/captiongenerator.png",
+    description:
+      "Caption Generator is a full-stack web application that could transcribe your video with caption automatically",
+    githubLink: "https://github.com/xuanhieu2611/Split-The-Bills",
+    link: "https://split-the-bills-hieu.vercel.app/",
+    stack: ["Nextjs", "JavaScript", "AWS S3", "AWS Transcribe"],
+  },
+  {
+    id: 2,
+    title: "Expense Tracker",
+    img: "/expensetracker.png",
+    description:
+      "Expense Tracker is a full-stack web application that keep tracks of your income and expenses",
+    githubLink: "https://github.com/xuanhieu2611/Split-The-Bills",
+    link: "https://split-the-bills-hieu.vercel.app/",
+    stack: ["React", "JavaScript", "MySQL", "Django", "Python"],
+  },
+  {
+    id: 3,
     title: "Split The Bills",
     img: "/splitthebills.png",
     description:
@@ -10,7 +30,7 @@ export const projects = [
     stack: ["React", "JavaScript", "MySQL", "Node.js", "Express.js"],
   },
   {
-    id: 2,
+    id: 4,
     title: "VitAlert",
     img: "/VitAlert.png",
     description:
@@ -20,7 +40,7 @@ export const projects = [
     stack: ["React", "TypeScript", "Firebase", "Edamam API"],
   },
   {
-    id: 3,
+    id: 5,
     title: "UBC Insight Website",
     img: "/ubc.png",
     description:
@@ -29,7 +49,7 @@ export const projects = [
     stack: ["TypeScript", "Node.js", "Express.js", "HTML", "CSS", "JavaScript"],
   },
   {
-    id: 4,
+    id: 6,
     title: "Portfolio Website",
     img: "/portfolio.png",
     description:

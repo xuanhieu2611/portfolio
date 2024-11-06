@@ -71,7 +71,7 @@ export default function Projects() {
                     once: true,
                   }}
                   className="flex items-center justify-center gap-2 rounded-xl px-4 py-1 dashing_button hover:scale-105"
-                  onClick={() => window.open(`${item.githubLink}`)}
+                  onClick={() => window.open(`${project.githubLink}`)}
                 >
                   <img
                     className="w-5 h-5"
@@ -80,18 +80,20 @@ export default function Projects() {
                   />
                   <span>Github</span>
                 </motion.button>
-                <motion.button
-                  whileInView={{ opacity: 1, y: 0 }}
-                  initial={{ opacity: 0, y: 100 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                  viewport={{
-                    once: true,
-                  }}
-                  className="border-0 rounded-xl px-2 py-1 shadow-[0_0_12px_4px_#22c55e] text-green-500 hover:shadow-[0_0_8px_6px_#22c55e] hover:scale-105"
-                  onClick={() => window.open(`${project.link}`)}
-                >
-                  Visit Website
-                </motion.button>
+                {project.link && (
+                  <motion.button
+                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, y: 100 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    viewport={{
+                      once: true,
+                    }}
+                    className="border-0 rounded-xl px-2 py-1 shadow-[0_0_12px_4px_#22c55e] text-green-500 hover:shadow-[0_0_8px_6px_#22c55e] hover:scale-105"
+                    onClick={() => window.open(`${project.link}`)}
+                  >
+                    Visit Website
+                  </motion.button>
+                )}
               </div>
 
               <motion.div

@@ -46,7 +46,7 @@ export default function About() {
             <b>Data Scientist</b>
           </p>
           <p className="text-center font-normal sm:text-left max-w-[520px]">
-            When <i>I'm not doing</i>, I enjoy playing basketball 🏀 and going
+            When <i>I'm not coding</i>, I enjoy playing basketball 🏀 and going
             to the gym 🏋️
           </p>
         </motion.div>

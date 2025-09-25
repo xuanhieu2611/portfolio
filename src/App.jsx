@@ -1,7 +1,7 @@
 import { Moon, Sun } from "lucide-react"
 import Button from "./components/Button"
 import { useState, useEffect } from "react"
-import { Github, Linkedin, Mail } from "lucide-react"
+import { Github, Linkedin, Mail, Twitter } from "lucide-react"
 import HeroSection from "./components/HeroSection"
 import ExperienceSection from "./components/ExperienceSection"
 import ProjectsSection from "./components/ProjectsSection"
@@ -30,15 +30,24 @@ function App() {
   }
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com", color: "hover:text-cyan-400" },
+    {
+      icon: Github,
+      href: "https://github.com/xuanhieu2611",
+      color: "hover:text-orange-400",
+    },
     {
       icon: Linkedin,
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/hieule2611/",
       color: "hover:text-purple-400",
     },
     {
+      icon: Twitter,
+      href: "https://twitter.com/hieule2611",
+      color: "hover:text-blue-400",
+    },
+    {
       icon: Mail,
-      href: "mailto:alex@example.com",
+      href: "mailto:hieulexuan261103@gmail.com",
       color: "hover:text-green-400",
     },
   ]
@@ -48,12 +57,14 @@ function App() {
       <style>
         {`
           :root {
-            --bg-primary: ${isDarkMode ? "#0a0a0a" : "#ffffff"};
+            --bg-primary: ${
+              isDarkMode ? "rgba(10, 10, 10, 0.8)" : "rgba(255, 255, 255, 0.8)"
+            };
             --bg-secondary: ${
               isDarkMode ? "rgba(26, 26, 46, 0.7)" : "rgba(248, 250, 252, 0.7)"
             };
-            --text-primary: ${isDarkMode ? "#e5e7eb" : "#1f2937"};
-            --text-secondary: ${isDarkMode ? "#9ca3af" : "#6b7280"};
+            --text-primary: ${isDarkMode ? "#F7F7F7" : "#1f2937"};
+            --text-secondary: ${isDarkMode ? "#B0B0B0" : "#444444"};
             --accent-cyan: #00f5ff;
             --accent-purple: #8b5cf6;
             --accent-green: #10b981;
@@ -65,7 +76,7 @@ function App() {
           }
           
           body {
-            background: var(--bg-primary);
+            background: ${isDarkMode ? "#0a0a0a" : "#f0f0f0"};
             color: var(--text-primary);
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             overflow-x: hidden;
@@ -150,10 +161,7 @@ function App() {
 
       {/* Main Content */}
       <main className="min-h-screen relative z-10">
-        <div
-          className="relative min-h-screen"
-          style={{ background: "rgba(10, 10, 10, 0.8)" }}
-        >
+        <div className="relative min-h-screen">
           <div className="max-w-3xl mx-auto px-6">
             <HeroSection />
             <div className="py-4"></div>
@@ -162,9 +170,9 @@ function App() {
             <ProjectsSection />
 
             {/* Footer */}
-            <footer className="py-4 border-t border-gray-800/50">
+            <footer className="pb-4 pt-2 border-t border-[var(--text-secondary)]/20">
               <div className="flex flex-col sm:flex-row justify-between items-center gap-3">
-                <p className="text-xs text-gray-500">
+                <p className="text-xs text-[var(--text-secondary)]">
                   © 2024 Hieu Le. All rights reserved.
                 </p>
                 <div className="flex gap-2">
@@ -174,16 +182,18 @@ function App() {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`text-gray-400 ${social.color} transition-colors duration-300 flex items-center`}
+                        className={`text-[var(--text-secondary)] ${social.color} transition-colors duration-300 flex items-center`}
                       >
-                        <social.icon className="w-4 h-4 flex-shrink-0" />
-                        <span className="text-xs whitespace-nowrap overflow-hidden w-0 group-hover:w-auto transition-all duration-300 ml-0 group-hover:ml-2">
+                        <social.icon className="w-5 h-5 flex-shrink-0" />
+                        <span className="text-sm whitespace-nowrap overflow-hidden w-0 group-hover:w-auto transition-all duration-300 ml-0 group-hover:ml-2">
                           {social.icon === Github
                             ? "GitHub"
                             : social.icon === Linkedin
                             ? "LinkedIn"
                             : social.icon === Mail
                             ? "Email"
+                            : social.icon === Twitter
+                            ? "Twitter"
                             : ""}
                         </span>
                       </a>

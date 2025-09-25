@@ -17,7 +17,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative flex justify-center md:justify-start"
           >
-            <div className="w-32 h-32 md:w-60 md:h-60 rounded-xl overflow-hidden border-4 border-white glow">
+            <div className="w-32 h-32 md:w-60 md:h-60 rounded-xl overflow-hidden border-4 border-[var(--text-primary)] glow">
               <img
                 src="/ava.png"
                 alt="Hieu Le Portrait"
@@ -33,10 +33,10 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-center md:text-left"
           >
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">
+            <h1 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-3">
               Hieu Le
             </h1>
-            <ul className="text-base text-gray-300 max-w-lg mx-auto md:mx-0 leading-relaxed space-y-2">
+            <ul className="text-base text-[var(--text-secondary)] max-w-lg mx-auto md:mx-0 leading-relaxed space-y-2">
               <li className="flex items-center">
                 <span className="w-2 h-2 bg-blue-400 transform rotate-45 mr-3 flex-shrink-0"></span>
                 CS student at{" "}
@@ -66,7 +66,7 @@ export default function HeroSection() {
                       behavior: "smooth",
                     })
                   }}
-                  className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors duration-300 transform"
+                  className="flex items-center gap-2 text-[var(--text-secondary)] hover:text-blue-400 transition-colors duration-300 transform"
                 >
                   Checkout my projects below!
                   <ArrowDown className="w-4 h-4" />
@@ -83,10 +83,10 @@ export default function HeroSection() {
             >
               <div className="group">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/xuanhieu2611"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center"
+                  className="text-[var(--text-secondary)] hover:text-orange-400 transition-colors duration-300 flex items-center"
                 >
                   <Github className="w-5 h-5 flex-shrink-0" />
                   <span className="text-sm whitespace-nowrap overflow-hidden w-0 group-hover:w-auto transition-all duration-300 ml-0 group-hover:ml-2">
@@ -97,10 +97,10 @@ export default function HeroSection() {
 
               <div className="group">
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/hieule2611/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-purple-400 transition-colors duration-300 flex items-center"
+                  className="text-[var(--text-secondary)] hover:text-purple-400 transition-colors duration-300 flex items-center"
                 >
                   <Linkedin className="w-5 h-5 flex-shrink-0" />
                   <span className="text-sm whitespace-nowrap overflow-hidden w-0 group-hover:w-auto transition-all duration-300 ml-0 group-hover:ml-2">
@@ -114,7 +114,7 @@ export default function HeroSection() {
                   href="https://twitter.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-blue-400 transition-colors duration-300 flex items-center"
+                  className="text-[var(--text-secondary)] hover:text-blue-400 transition-colors duration-300 flex items-center"
                 >
                   <Twitter className="w-5 h-5 flex-shrink-0" />
                   <span className="text-sm whitespace-nowrap overflow-hidden w-0 group-hover:w-auto transition-all duration-300 ml-0 group-hover:ml-2">
@@ -125,8 +125,8 @@ export default function HeroSection() {
 
               <div className="group">
                 <a
-                  href="mailto:alex@example.com"
-                  className="text-gray-400 hover:text-green-400 transition-colors duration-300 flex items-center"
+                  href="mailto:hieulexuan261103@gmail.com"
+                  className="text-[var(--text-secondary)] hover:text-green-400 transition-colors duration-300 flex items-center"
                 >
                   <Mail className="w-5 h-5 flex-shrink-0" />
                   <span className="text-sm whitespace-nowrap overflow-hidden w-0 group-hover:w-auto transition-all duration-300 ml-0 group-hover:ml-2">

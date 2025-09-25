@@ -1,19 +1,9 @@
 import React from "react"
 import { motion } from "framer-motion"
 import { Building2, Calendar } from "lucide-react"
+import { experiences } from "../data/experiences"
 
 export default function ExperienceSection() {
-  const experiences = [
-    {
-      company: "Teck Resources Ltd.",
-      role: "Software Developer Co-op",
-      period: "Dec 2024 - Aug 2025",
-      description:
-        "Developed automation tools, data pipelines, and analytics solutions using Python, Power Automate, and Power BI to improve recruiting operations—cutting process times by up to 40%, reducing data discrepancies by 85%, and enabling data-driven decisions through interactive dashboards. Experienced in Agile practices, system integrations, and delivering scalable software solutions that optimize workflows.",
-      technologies: ["Python", "Power Automate", "Power BI", "Azure DevOps"],
-    },
-  ]
-
   return (
     <section id="experience" className="py-8">
       <motion.div
@@ -44,10 +34,10 @@ export default function ExperienceSection() {
               <div className="absolute left-2 top-1.5 w-4 h-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full border-4 border-[var(--bg-primary)] z-10"></div>
               <div className="group">
                 <div className="flex flex-wrap items-baseline justify-between mb-1">
-                  <h3 className="text-lg font-bold text-white flex items-center gap-3">
+                  <h3 className="text-lg font-bold text-[var(--text-primary)] flex items-center gap-3">
                     {exp.company}
                   </h3>
-                  <p className="text-sm text-gray-400 flex items-center gap-2">
+                  <p className="text-sm text-[var(--text-secondary)] flex items-center gap-2">
                     <Calendar className="w-4 h-4" />
                     {exp.period}
                   </p>
@@ -55,14 +45,14 @@ export default function ExperienceSection() {
                 <h4 className="text-base font-semibold gradient-text mb-2">
                   {exp.role}
                 </h4>
-                <p className="text-sm text-gray-300 leading-relaxed mb-3">
+                <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-3">
                   {exp.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {exp.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 bg-gray-800/80 text-gray-400 text-xs font-medium rounded-full"
+                      className="px-3 py-1 bg-[var(--bg-secondary)] text-[var(--text-secondary)] text-xs font-medium rounded-full"
                     >
                       {tech}
                     </span>

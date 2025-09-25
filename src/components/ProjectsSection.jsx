@@ -1,56 +1,9 @@
 import React from "react"
 import { motion } from "framer-motion"
 import { ExternalLink, Github } from "lucide-react"
+import { projects } from "../data/projects"
 
 export default function ProjectsSection() {
-  const projects = [
-    {
-      title: "SumUp Sundae - nwHacks 2025 Winner",
-      description:
-        "A social video platform where weekly video updates unlock access to your friends’ content.",
-      technologies: ["React", "Node.js", "PostgreSQL", "Stripe API"],
-      github: "https://github.com/tyin76/sum-up-sundae",
-      demo: "https://demo.example.com",
-    },
-    {
-      title: "Stroke Detection Model",
-      description:
-        "Predicting stroke risk from patient health data with 97% recall using advanced ML models.",
-      technologies: ["TypeScript", "Python", "TensorFlow", "VS Code API"],
-      github: "https://github.com/xuanhieu2611/StrokeDetection",
-    },
-    {
-      title: "Video Caption Generator",
-      description:
-        "Upload videos, auto-generate captions, and edit them instantly with AWS-powered transcription.",
-      technologies: ["React", "Socket.io", "Node.js", "MongoDB"],
-      github: "https://github.com/xuanhieu2611/caption-generator",
-    },
-    {
-      title: "Split The Bills",
-      description:
-        "Easily track group expenses and automate cost-splitting with AI-powered receipt scanning.",
-      technologies: ["React Native", "Python", "MQTT", "InfluxDB"],
-      github: "https://github.com/xuanhieu2611/Split-The-Bills",
-      demo: "https://split-the-bills-hieu.vercel.app/",
-    },
-    {
-      title: "Expense Tracker",
-      description:
-        "A full-stack web application that keep tracks of your income and expenses.",
-      technologies: ["React.js", "JavaScript", "MySQL", "Django", "Python"],
-      github: "https://github.com/xuanhieu2611/expense_tracker",
-      demo: "https://expense-tracker-hieu.vercel.app/",
-    },
-    {
-      title: "VitAlert – Nutrition Tracking Web App",
-      description:
-        "Tracks daily food intake, highlights nutrient levels, and flags potential deficiencies with personalized insights.",
-      technologies: ["React", "TypeScript", "Edamam API", "Firebase"],
-      github: "https://github.com/xuanhieu2611/VitAlert",
-    },
-  ]
-
   return (
     <section id="projects" className="py-8">
       <motion.div
@@ -77,7 +30,7 @@ export default function ProjectsSection() {
             className="group relative bg-[var(--bg-secondary)] backdrop-blur-sm rounded-lg p-3 border border-gray-800/80 hover:border-cyan-500/50 transition-all duration-300"
           >
             <div className="flex justify-between items-start mb-3">
-              <h3 className="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">
+              <h3 className="text-lg font-bold text-[var(--text-primary)] group-hover:text-cyan-400 transition-colors duration-300">
                 {project.title}
               </h3>
               <div className="flex gap-3">
@@ -85,7 +38,7 @@ export default function ProjectsSection() {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white"
+                  className="text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
                 >
                   <Github className="w-5 h-5" />
                 </a>
@@ -93,13 +46,13 @@ export default function ProjectsSection() {
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white"
+                  className="text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
                 >
                   <ExternalLink className="w-5 h-5" />
                 </a>
               </div>
             </div>
-            <p className="text-gray-300 text-xs leading-relaxed mb-3">
+            <p className="text-[var(--text-secondary)] text-xs leading-relaxed mb-3">
               {project.description}
             </p>
             <div className="flex flex-wrap gap-2">

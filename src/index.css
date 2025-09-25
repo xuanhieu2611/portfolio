@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -13,17 +13,13 @@ html {
   padding: 0;
   box-sizing: border-box;
   list-style: none;
-  font-family: "Roboto", sans-serif;
+  font-family: "JetBrains Mono", monospace;
 }
 
-section {
-  height: 100vh;
-}
-
-.dashing_button{
+.dashing_button {
   color: #000000;
   /* background-color: #08AEEA; */
-  background-image: linear-gradient(90deg, #08AEEA, #2AF598,#08AEEA, #2AF598);
+  background-image: linear-gradient(90deg, #08aeea, #2af598, #08aeea, #2af598);
   background-size: 300% 300%;
   animation: bg 10s ease-in-out infinite;
 }

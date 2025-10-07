@@ -1,5 +1,13 @@
 export const projects = [
   {
+    title: "Sightline - StormHacks 2025",
+    description:
+      "Sightline is an AI-powered Progressive Web App (PWA) designed to help blind and low-vision individuals understand the world around them through real-time audio descriptions.",
+    technologies: ["Next.js", "Gemini API", "EleventLabs", "TypeScript", "PWA"],
+    github: "https://github.com/xuanhieu2611/Sightline",
+    demo: "https://sightline-xi.vercel.app/describe",
+  },
+  {
     title: "SumUp Sundae - nwHacks 2025 Winner",
     description:
       "A social video platform where weekly video updates unlock access to your friends' content.",

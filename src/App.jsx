@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react"
-import { Github, Linkedin, Mail, Twitter } from "lucide-react"
-import HeroSection from "./components/HeroSection"
-import ExperienceSection from "./components/ExperienceSection"
-import ProjectsSection from "./components/ProjectsSection"
+import { Routes, Route, useNavigate, useLocation, Link } from "react-router-dom"
+import { Linkedin } from "lucide-react"
+import ThemeToggle from "./components/ThemeToggle"
+import Home from "./pages/Home"
+import ProjectsPage from "./pages/ProjectsPage"
 
 function App() {
   const [scrolled, setScrolled] = useState(false)
+  const navigate = useNavigate()
+  const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -13,86 +16,128 @@ function App() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const scrollToSection = (sectionId) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" })
+  // Handle hash scrolling on navigation
+  useEffect(() => {
+    if (location.hash) {
+      setTimeout(() => {
+        const id = location.hash.replace("#", "")
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
+      }, 100)
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+  }, [location])
+
+  const handleNavClick = (e, sectionId) => {
+    e.preventDefault()
+    if (location.pathname !== "/") {
+      navigate(`/#${sectionId}`)
+    } else {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" })
+      window.history.pushState({}, "", `/#${sectionId}`)
+    }
   }
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-[#EBEBEB]">
+    <div className="min-h-screen bg-background text-foreground">
       <nav
         className={`fixed top-0 w-full z-50 transition-all duration-200 ${
-          scrolled ? "bg-[#0A0A0A]/95 border-b border-[#1F1F1F]" : ""
+          scrolled
+            ? "bg-background/90 backdrop-blur-sm border-b border-border"
+            : "bg-transparent"
         }`}
       >
-        <div className="max-w-2xl mx-auto px-6 py-4">
+        <div className="max-w-2xl mx-auto px-6 py-6">
           <div className="flex justify-between items-center">
-            <button
-              onClick={() => scrollToSection("hero")}
-              className="text-sm font-medium text-[#EBEBEB] hover:text-white transition-colors"
+            <Link
+              to="/"
+              className="text-sm font-mono font-medium text-foreground hover:text-foreground transition-colors tracking-tight"
             >
-              hieu le
-            </button>
-            <div className="flex items-center gap-6">
-              <button
-                onClick={() => scrollToSection("experience")}
-                className="text-sm text-[#A1A1AA] hover:text-[#EBEBEB] transition-colors"
+              Hieu Le
+            </Link>
+            <div className="flex items-center gap-6 font-mono text-xs">
+              <a
+                href="#experience"
+                onClick={(e) => handleNavClick(e, "experience")}
+                className="text-foreground-muted hover:text-foreground transition-colors"
               >
                 experience
-              </button>
-              <button
-                onClick={() => scrollToSection("projects")}
-                className="text-sm text-[#A1A1AA] hover:text-[#EBEBEB] transition-colors"
+              </a>
+              <Link
+                to="/projects"
+                className="text-foreground-muted hover:text-foreground transition-colors"
               >
                 projects
-              </button>
+              </Link>
+              <ThemeToggle />
             </div>
           </div>
         </div>
       </nav>
 
       <main>
-        <div className="max-w-2xl mx-auto px-6">
-          <HeroSection />
-          <ExperienceSection />
-          <ProjectsSection />
+        <div className="max-w-2xl mx-auto px-6 pt-12">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+          </Routes>
 
-          <footer className="py-8 mt-4 border-t border-[#1F1F1F]">
+          <hr className="border-border/50 mb-4" />
+          <div className="pb-8">
             <div className="flex justify-between items-center">
-              <p className="text-xs font-mono text-[#555555]">© 2025 Hieu Le</p>
-              <div className="flex gap-4">
+              <p className="text-xs font-mono text-foreground-muted">
+                © 2026 Hieu Le
+              </p>
+              <div className="flex gap-4 items-center">
                 <a
                   href="https://github.com/xuanhieu2611"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#555555] hover:text-[#A1A1AA] transition-colors"
+                  className="opacity-60 hover:opacity-100 transition-opacity"
                 >
-                  <Github className="w-4 h-4" />
+                  <img
+                    src="/github.png"
+                    alt="GitHub"
+                    className="w-5 h-5 object-contain bg-white rounded-md"
+                  />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/hieule2611/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#555555] hover:text-[#A1A1AA] transition-colors"
+                  className="text-foreground-subtle hover:text-foreground transition-colors flex items-center"
                 >
-                  <Linkedin className="w-4 h-4" />
+                  <img
+                    src="/linkedin.png"
+                    alt="LinkedIn"
+                    className="w-5 h-5 object-contain bg-white rounded-md"
+                  />
                 </a>
                 <a
                   href="https://twitter.com/hieule2611"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#555555] hover:text-[#A1A1AA] transition-colors"
+                  className="opacity-60 hover:opacity-100 transition-opacity"
                 >
-                  <Twitter className="w-4 h-4" />
+                  <img
+                    src="/twitter.jpg"
+                    alt="Twitter"
+                    className="w-5 h-5 object-cover rounded-md"
+                  />
                 </a>
                 <a
                   href="mailto:hieulexuan261103@gmail.com"
-                  className="text-[#555555] hover:text-[#A1A1AA] transition-colors"
+                  className="opacity-60 hover:opacity-100 transition-opacity"
                 >
-                  <Mail className="w-4 h-4" />
+                  <img
+                    src="/gmail.svg"
+                    alt="Email"
+                    className="w-5 h-5 object-contain bg-white rounded-md"
+                  />
                 </a>
               </div>
             </div>
-          </footer>
+          </div>
         </div>
       </main>
     </div>

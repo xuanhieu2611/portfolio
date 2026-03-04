@@ -1,16 +1,16 @@
 export const projects = [
   {
-    title: "Sightline - StormHacks 2025",
+    title: "Sightline",
     description:
-      "Sightline is an AI-powered Progressive Web App (PWA) designed to help blind and low-vision individuals understand the world around them through real-time audio descriptions.",
-    technologies: ["Next.js", "Gemini API", "EleventLabs", "TypeScript", "PWA"],
+      "AI audio-describer for the visually impaired (StormHacks 2025)",
+    technologies: ["Next.js", "Gemini API", "ElevenLabs", "TypeScript", "PWA"],
     github: "https://github.com/xuanhieu2611/Sightline",
     demo: "https://sightline-xi.vercel.app/describe",
   },
   {
-    title: "SumUp Sundae - nwHacks 2025 Winner",
+    title: "SumUp Sundae",
     description:
-      "A social video platform where weekly video updates unlock access to your friends' content.",
+      "Social video platform unlocking content via weekly updates (🏆 Winner of nwHacks 2025)",
     technologies: [
       "React.js",
       "Node.js",
@@ -20,26 +20,26 @@ export const projects = [
       "Firebase",
     ],
     github: "https://github.com/tyin76/sum-up-sundae",
-    demo: "https://demo.example.com",
+    demo: null,
   },
   {
     title: "Stroke Detection Model",
     description:
-      "Predicting stroke risk from patient health data with 97% recall using advanced ML models.",
-    technologies: ["Python", "Scikit-learn", "Pandas", "Numpy", "Matplotlib"],
+      "ML classifier predicting stroke risk with 97% recall using patient health data",
+    technologies: ["Python", "Scikit-learn", "Pandas", "NumPy", "Matplotlib"],
     github: "https://github.com/xuanhieu2611/StrokeDetection",
   },
   {
     title: "Video Caption Generator",
     description:
-      "Upload videos, auto-generate captions, and edit them instantly with AWS-powered transcription.",
+      "Auto-generate and edit video captions instantly with AWS-powered transcription",
     technologies: ["Next.js", "AWS S3", "AWS Transcribe", "Tailwind CSS"],
     github: "https://github.com/xuanhieu2611/caption-generator",
   },
   {
     title: "Split The Bills",
     description:
-      "Easily track group expenses and automate cost-splitting with AI-powered receipt scanning.",
+      "Track group expenses and automate cost-splitting with AI receipt scanning",
     technologies: ["React.js", "JavaScript", "MySQL", "Node.js", "OpenAI API"],
     github: "https://github.com/xuanhieu2611/Split-The-Bills",
     demo: "https://split-the-bills-hieu.vercel.app/",
@@ -47,15 +47,15 @@ export const projects = [
   {
     title: "Expense Tracker",
     description:
-      "A full-stack web application that keep tracks of your income and expenses.",
+      "Full-stack app for tracking income and expenses across multiple categories",
     technologies: ["React.js", "JavaScript", "MySQL", "Django", "Python"],
     github: "https://github.com/xuanhieu2611/expense_tracker",
     demo: "https://expense-tracker-hieu.vercel.app/",
   },
   {
-    title: "VitAlert – Nutrition Tracking Web App",
+    title: "VitAlert",
     description:
-      "Tracks daily food intake, highlights nutrient levels, and flags potential deficiencies with personalized insights.",
+      "Dietary insight platform tracking daily food intake and nutrient deficiencies",
     technologies: ["React", "TypeScript", "Edamam API", "Firebase"],
     github: "https://github.com/xuanhieu2611/VitAlert",
   },

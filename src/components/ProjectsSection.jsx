@@ -1,37 +1,72 @@
 import { ExternalLink, Github } from "lucide-react"
 import { projects } from "../data/projects"
+import { Link } from "react-router-dom"
+
+const HighlightText = ({ text }) => {
+  const parts = text.split(/(Winner of [^.]+|97% recall|3M\+ views)/g)
+  return (
+    <>
+      {parts.map((part, i) => {
+        if (
+          part.startsWith("Winner") ||
+          part.includes("97%") ||
+          part.includes("views")
+        ) {
+          return (
+            <span key={i} className="text-foreground font-medium">
+              {part}
+            </span>
+          )
+        }
+        return <span key={i}>{part}</span>
+      })}
+    </>
+  )
+}
 
 export default function ProjectsSection() {
-  return (
-    <section id="projects" className="py-12 border-t border-[#1F1F1F]">
-      <h2 className="text-xs font-mono text-[#555555] uppercase tracking-widest mb-8">
-        Projects
-      </h2>
+  const featuredProjects = projects.slice(0, 3) // Show top 3 projects
 
-      <div className="space-y-5">
-        {projects.map((project, index) => (
-          <div key={index} className="group flex items-start gap-3">
-            <span className="text-[#444444] font-mono text-sm mt-px flex-shrink-0 select-none">
-              ↳
-            </span>
-            <div className="min-w-0">
-              <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
-                <span className="text-sm font-medium text-[#EBEBEB] group-hover:text-white transition-colors">
-                  {project.title}
-                </span>
-                <span className="text-[#444444] select-none">—</span>
-                <span className="text-sm text-[#A1A1AA] leading-relaxed">
-                  {project.description}
-                </span>
+  const getProjectIcon = (title) => {
+    if (title.includes("Sightline")) return "👁️"
+    if (title.includes("SumUp")) return "🍦"
+    if (title.includes("Stroke")) return "🧠"
+    if (title.includes("Video")) return "🎬"
+    if (title.includes("Split")) return "💸"
+    return "⚡"
+  }
+
+  return (
+    <section id="projects" className="py-8">
+      <div className="flex items-center gap-2 mb-6">
+        <span className="text-foreground-muted text-sm italic font-medium">
+          ♦ other things i've been building:
+        </span>
+      </div>
+
+      <div className="space-y-6">
+        {featuredProjects.map((project, index) => (
+          <div key={index} className="group flex flex-col items-start gap-1">
+            <div className="flex items-center gap-2">
+              <span className="text-base">{getProjectIcon(project.title)}</span>
+              <a
+                href={project.demo || project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground font-bold text-sm hover:underline decoration-foreground-subtle underline-offset-2 transition-all"
+              >
+                {project.title}
+              </a>
+              <div className="flex items-center gap-2 ml-1">
                 {project.github && (
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#555555] hover:text-[#A1A1AA] transition-colors flex-shrink-0"
-                    aria-label={`${project.title} GitHub`}
+                    className="text-foreground-subtle hover:text-foreground transition-colors"
+                    aria-label="GitHub"
                   >
-                    <Github className="w-3.5 h-3.5" />
+                    <Github className="w-3 h-3" />
                   </a>
                 )}
                 {project.demo && (
@@ -39,19 +74,36 @@ export default function ProjectsSection() {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#555555] hover:text-[#A1A1AA] transition-colors flex-shrink-0"
-                    aria-label={`${project.title} demo`}
+                    className="text-foreground-subtle hover:text-foreground transition-colors"
+                    aria-label="Live Demo"
                   >
-                    <ExternalLink className="w-3.5 h-3.5" />
+                    <ExternalLink className="w-3 h-3" />
                   </a>
                 )}
               </div>
-              <p className="text-xs font-mono text-[#444444] mt-1">
-                {project.technologies.join("  ·  ")}
-              </p>
+            </div>
+
+            <div className="flex gap-3 ml-1 border-l border-border pl-4 pb-1">
+              <span className="text-foreground-subtle select-none text-sm leading-tight font-mono mt-[2px]">
+                ↳
+              </span>
+              <div className="space-y-2">
+                <p className="text-foreground-muted text-sm leading-tight max-w-xl">
+                  <HighlightText text={project.description} />
+                </p>
+              </div>
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="mt-8 ml-5">
+        <Link
+          to="/projects"
+          className="text-xs font-mono text-foreground-muted hover:text-foreground transition-colors flex items-center gap-2"
+        >
+          <span className="text-foreground-subtle">↳</span> view all projects ↗
+        </Link>
       </div>
     </section>
   )

@@ -1,3 +1,4 @@
+import { ExternalLink } from "lucide-react"
 import { experiences } from "../data/experiences"
 
 const HighlightText = ({ text }) => {
@@ -111,6 +112,17 @@ function ExperienceItem({ exp }) {
         <h3 className="text-foreground font-medium text-sm flex items-center gap-2">
           <CompanyIcon company={exp.company} />
           {exp.company}
+          {exp.link && (
+            <a
+              href={exp.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground-subtle hover:text-foreground transition-colors"
+              aria-label="Visit website"
+            >
+              <ExternalLink className="w-3 h-3" />
+            </a>
+          )}
           <span className="text-foreground-subtle text-xs font-normal hidden sm:inline">
             —
           </span>

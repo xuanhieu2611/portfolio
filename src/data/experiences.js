@@ -3,6 +3,7 @@ export const experiences = [
     company: "Stride AI",
     role: "Founder",
     period: "Present",
+    link: "https://getstrideai.com/",
     description:
       "Building an adaptive AI iOS running coach that creates personalized training plans and adjusts workouts in real time like a human coach",
     technologies: ["Swift", "Firebase", "HealthKit"],

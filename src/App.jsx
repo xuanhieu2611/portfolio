@@ -114,7 +114,7 @@ function App() {
                   />
                 </a>
                 <a
-                  href="https://twitter.com/hieule2611"
+                  href="https://twitter.com/hieuspringle"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="opacity-60 hover:opacity-100 transition-opacity"

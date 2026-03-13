@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { Routes, Route, useNavigate, useLocation, Link } from "react-router-dom"
+import { Analytics } from "@vercel/analytics/react"
 import { Linkedin } from "lucide-react"
 import ThemeToggle from "./components/ThemeToggle"
 import Home from "./pages/Home"
@@ -140,6 +141,7 @@ function App() {
           </div>
         </div>
       </main>
+      <Analytics />
     </div>
   )
 }

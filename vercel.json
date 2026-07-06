@@ -1,0 +1,6 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/((?!api/|hydro-ai/).*)", "destination": "/index.html" }
+  ]
+}

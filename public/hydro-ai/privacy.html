@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hydro AI — Privacy Policy</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 720px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem;
+      color: #0f172a; background: #f8fafc;
+    }
+    @media (prefers-color-scheme: dark) { body { color: #e2e8f0; background: #0b1220; } }
+    h1 { font-size: 1.9rem; margin-bottom: .25rem; }
+    h2 { font-size: 1.2rem; margin-top: 2rem; }
+    .meta { color: #64748b; font-size: .9rem; margin-bottom: 2rem; }
+    a { color: #0284c7; }
+    ul { padding-left: 1.25rem; }
+    li { margin: .3rem 0; }
+  </style>
+</head>
+<body>
+  <h1>Hydro AI — Privacy Policy</h1>
+  <p class="meta">Last updated: July 6, 2026</p>
+
+  <p>
+    Hydro AI (“the app,” “we,” “us”) helps you track your hydration by taking a
+    photo of a drink and estimating its volume. We built the app to collect as
+    little as possible. This policy explains exactly what we handle and why.
+  </p>
+
+  <h2>What we collect</h2>
+  <ul>
+    <li><strong>Account identity.</strong> When you sign in with Apple or Google,
+      we receive your email address and (for Google) your name and profile photo.
+      We use these to create your account and personalize the app. We never
+      receive your Apple or Google password.</li>
+    <li><strong>Hydration logs.</strong> For each drink you log we store the
+      estimated volume, beverage type, a hydration value, a timestamp, the AI
+      confidence score, and a small thumbnail image. This is the data that powers
+      your dashboard, history, and streaks.</li>
+    <li><strong>Profile &amp; preferences.</strong> Your display name, daily goal,
+      units (ml/oz), and reminder settings.</li>
+    <li><strong>Accountability circle (optional).</strong> If you connect with
+      friends, we store the connection so you can see each other’s daily progress
+      summaries and streaks. Connected friends never see your individual logs.</li>
+  </ul>
+
+  <h2>Photos are processed, not stored</h2>
+  <p>
+    The full-resolution photo you take is sent to our secure analysis service
+    only to estimate the drink, and is <strong>discarded immediately</strong> —
+    it is never saved on our servers. Only a small thumbnail generated on your
+    device, plus the resulting estimate, is stored in your account.
+  </p>
+
+  <h2>How the AI works</h2>
+  <p>
+    Drink estimates are produced by Anthropic’s Claude Vision model, called from
+    our own secure backend. The image is used solely to generate your estimate
+    and is not used to train any model.
+  </p>
+
+  <h2>What we do not do</h2>
+  <ul>
+    <li>We do not sell your personal data.</li>
+    <li>We do not use your data for advertising.</li>
+    <li>We do not store your full-resolution photos.</li>
+  </ul>
+
+  <h2>Where your data lives</h2>
+  <p>
+    Your account data is stored using Supabase (Postgres, Auth, and Storage).
+    Access is restricted by row-level security so you can only read and write
+    your own data.
+  </p>
+
+  <h2>Deleting your data</h2>
+  <p>
+    You are in control of your data at any time from within the app:
+  </p>
+  <ul>
+    <li><strong>Clear all history</strong> (Profile → Data &amp; account) removes
+      all your logged drinks while keeping your account.</li>
+    <li><strong>Delete account</strong> (Profile → Data &amp; account) permanently
+      deletes your account and all associated data — profile, logs, thumbnails,
+      and connections. This cannot be undone.</li>
+  </ul>
+  <p>
+    If you can’t access the app, email us at
+    <a href="mailto:strideaicoach@gmail.com">strideaicoach@gmail.com</a> and we
+    will delete your account on request.
+  </p>
+
+  <h2>Exporting your data</h2>
+  <p>
+    You can download a copy of your data at any time from
+    <strong>Profile → Data &amp; account → Export my data</strong>. It produces a
+    portable file containing your profile and full log history.
+  </p>
+
+  <h2>Children</h2>
+  <p>Hydro AI is not directed to children under 13, and we do not knowingly
+    collect data from them.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>We may update this policy from time to time. Material changes will be
+    reflected by the “Last updated” date above.</p>
+
+  <h2>Contact</h2>
+  <p>
+    Questions about this policy or your data? Email
+    <a href="mailto:strideaicoach@gmail.com">strideaicoach@gmail.com</a>.
+  </p>
+</body>
+</html>

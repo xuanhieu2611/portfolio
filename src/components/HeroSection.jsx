@@ -17,25 +17,9 @@ export default function HeroSection() {
 
         <div className="space-y-4 max-w-xl">
           <p className="text-foreground text-lg leading-relaxed">
-            I'm a builder and CS student at{" "}
-            <span className="whitespace-nowrap">
-              <img
-                src="/ubc-logo.png"
-                alt="UBC"
-                className="inline-block w-4 h-4 object-contain bg-white rounded-sm align-middle translate-y-[-1.5px] mr-1"
-              />
-              <a
-                href="https://www.ubc.ca"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative transition-colors pb-px group"
-              >
-                UBC
-                <span className="absolute left-0 bottom-0 w-full h-[1px] bg-foreground-faint"></span>
-                <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-foreground transition-all duration-300 ease-out group-hover:w-full"></span>
-              </a>
-            </span>
-            . Currently, I'm founding{" "}
+            I'm an independent software developer and founder, building fast,
+            modern websites and products for businesses. Currently, I'm
+            founding{" "}
             <span className="whitespace-nowrap">
               <img
                 src="/stride-logo.png"
@@ -57,7 +41,25 @@ export default function HeroSection() {
                 <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-foreground transition-all duration-300 ease-out group-hover:w-full"></span>
               </a>
             </span>
-            , an iOS running coach.
+            , an iOS running coach — with a CS background at{" "}
+            <span className="whitespace-nowrap">
+              <img
+                src="/ubc-logo.png"
+                alt="UBC"
+                className="inline-block w-4 h-4 object-contain bg-white rounded-sm align-middle translate-y-[-1.5px] mr-1"
+              />
+              <a
+                href="https://www.ubc.ca"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative transition-colors pb-px group"
+              >
+                UBC
+                <span className="absolute left-0 bottom-0 w-full h-[1px] bg-foreground-faint"></span>
+                <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-foreground transition-all duration-300 ease-out group-hover:w-full"></span>
+              </a>
+            </span>
+            .
           </p>
         </div>
       </div>

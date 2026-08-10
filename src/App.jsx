@@ -5,6 +5,7 @@ import { Linkedin } from "lucide-react"
 import ThemeToggle from "./components/ThemeToggle"
 import Home from "./pages/Home"
 import ProjectsPage from "./pages/ProjectsPage"
+import NotesPage from "./pages/NotesPage"
 
 function App() {
   const [scrolled, setScrolled] = useState(false)
@@ -81,6 +82,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/notes" element={<NotesPage />} />
           </Routes>
 
           <hr className="border-border/50 mb-4" />

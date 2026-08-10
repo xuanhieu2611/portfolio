@@ -17,6 +17,7 @@ const HighlightText = ({ text }) => {
 }
 
 const getProjectIcon = (title) => {
+  if (title.includes("Hydro AI")) return "💧"
   if (title.includes("Sightline")) return "👁️"
   if (title.includes("SumUp")) return "🍦"
   if (title.includes("Stroke")) return "🧠"
@@ -44,7 +45,16 @@ export default function ProjectsPage() {
         {projects.map((project, index) => (
           <div key={index} className="group flex flex-col items-start gap-1">
             <div className="flex items-center gap-2">
-              <span className="text-base">{getProjectIcon(project.title)}</span>
+              {project.image ? (
+                <img
+                  src={project.image}
+                  alt=""
+                  aria-hidden="true"
+                  className="w-6 h-6 rounded-[0.4rem] object-cover"
+                />
+              ) : (
+                <span className="text-base">{getProjectIcon(project.title)}</span>
+              )}
               <a
                 href={project.demo || project.github}
                 target="_blank"

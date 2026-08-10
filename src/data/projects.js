@@ -1,5 +1,21 @@
 export const projects = [
   {
+    title: "Hydro AI",
+    description:
+      "Production-ready, photo-first hydration app - Claude Vision estimates a drink's volume and hydration value, with streaks, social accountability, subscriptions, and privacy-first image handling",
+    technologies: [
+      "React Native",
+      "Expo",
+      "Claude Vision",
+      "Supabase",
+      "RevenueCat",
+      "TypeScript",
+    ],
+    github: "https://github.com/xuanhieu2611/Hydro-AI",
+    demo: "https://apps.apple.com/ca/app/hydro-ai-water-tracker/id6785374266",
+    image: "/hydro-ai-icon.png",
+  },
+  {
     title: "Sightline",
     description:
       "AI audio-describer for the visually impaired (StormHacks 2025)",

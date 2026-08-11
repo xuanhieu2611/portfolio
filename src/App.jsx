@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react"
 import { Routes, Route, useNavigate, useLocation, Link } from "react-router-dom"
 import { Analytics } from "@vercel/analytics/react"
-import { Linkedin } from "lucide-react"
 import ThemeToggle from "./components/ThemeToggle"
 import Home from "./pages/Home"
 import ProjectsPage from "./pages/ProjectsPage"
 import NotesPage from "./pages/NotesPage"
+import CaseStudyPage from "./pages/CaseStudyPage"
 
 function App() {
   const [scrolled, setScrolled] = useState(false)
@@ -42,7 +42,11 @@ function App() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <a href="#main" className="skip-link font-mono">
+        Skip to content
+      </a>
       <nav
+        aria-label="Main"
         className={`fixed top-0 w-full z-50 transition-all duration-200 ${
           scrolled
             ? "bg-background/90 backdrop-blur-sm border-b border-border"
@@ -77,16 +81,18 @@ function App() {
         </div>
       </nav>
 
-      <main>
-        <div className="max-w-2xl mx-auto px-6 pt-12">
+      <div className="max-w-2xl mx-auto px-6 pt-12">
+        <main id="main" tabIndex={-1}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/projects/:slug" element={<CaseStudyPage />} />
             <Route path="/notes" element={<NotesPage />} />
           </Routes>
+        </main>
 
           <hr className="border-border/50 mb-4" />
-          <div className="pb-8">
+          <footer className="pb-8">
             <div className="flex justify-between items-center">
               <p className="text-xs font-mono text-foreground-muted">
                 © 2026 Hieu Le
@@ -140,9 +146,8 @@ function App() {
                 </a>
               </div>
             </div>
-          </div>
-        </div>
-      </main>
+        </footer>
+      </div>
       <Analytics />
     </div>
   )

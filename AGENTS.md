@@ -4,7 +4,7 @@
 
 This is **not just a portfolio site**. It's Hieu's personal Vercel deployment (hieule.ca) that hosts several unrelated things behind one build/deploy pipeline:
 
-- **The portfolio SPA** (`src/`) - the public-facing React site: home page, projects, experience. This is what recruiters/clients see.
+- **The portfolio SPA** (`src/`) - the public-facing React site: home page, projects, experience, and per-project case studies. This is what recruiters see, and its copy is deliberately written for new-grad software engineering hiring: concrete scope and outcomes over adjectives, no freelance/agency framing, and claims phrased so they survive being questioned in an interview. Keep that register when editing copy.
 - **`/notes`** - a route in the same SPA (`src/pages/NotesPage.jsx`, content in `src/data/notes.js`) that is intentionally **unlinked** from any nav/footer. It's Hieu's private setup/config log, not portfolio content. Do not add it to navigation, sitemaps, or link it from anywhere - that would defeat the point.
 - **`api/tiktok-images.js`** - a standalone Vercel serverless function (image proxy for a Supabase bucket, allowlisted to one hostname). Unrelated to the React app; it's just co-deployed here.
 - **`public/hydro-ai/`** - static, standalone HTML pages (`support.html`, `privacy.html`) for a separate mobile app called "Hydro AI". Plain HTML/CSS, no build step, no relation to the React app or its Tailwind theme.
@@ -16,7 +16,7 @@ Because of this, changes to one area (e.g. portfolio styling) should not leak in
 - `npm run dev` - start Vite dev server
 - `npm run build` - production build (outputs to `dist/`)
 - `npm run preview` - preview the production build locally
-- `npm run lint` - ESLint over `.js`/`.jsx` (max-warnings 0)
+- `npm run lint` - ESLint over `.js`/`.jsx` (max-warnings 0). **Currently broken**: no ESLint config file exists in the repo, so the script errors out rather than linting. Verify changes with `npm run build` instead.
 
 No test suite exists in this repo.
 
@@ -30,7 +30,20 @@ Vercel rewrites everything **except** `/api/*` and `/hydro-ai/*` to `/index.html
 ## Portfolio app architecture (`src/`)
 
 - `App.jsx` owns the top-level layout: fixed nav, `<Routes>` for pages, and a shared footer (social links) rendered outside the routed content on every page.
-- `pages/` are route-level screens (`Home`, `ProjectsPage`, `NotesPage`); `components/` are the reusable pieces `Home` composes (`HeroSection`, `ExperienceSection`, `ProjectsSection`, etc.).
-- Content is data-driven: `data/projects.js`, `data/experiences.js`, `data/notes.js` are plain arrays consumed by the corresponding page/section. Adding a project, experience entry, or note means editing these files, not JSX.
-- Theming is centralized in `constants/colors.js` (single source of truth for light/dark palettes) and applied via Tailwind CSS variables + a `dark` class toggled by `context/ThemeContext.jsx` (persisted to `localStorage`, defaults to system preference). `index.html` has an inline pre-hydration script that sets the `dark` class before React mounts, to avoid a flash of the wrong theme - keep that in sync with `ThemeContext.jsx`'s logic if theme defaulting ever changes.
+- `pages/` are route-level screens (`Home`, `ProjectsPage`, `CaseStudyPage`, `NotesPage`); `components/` are the reusable pieces `Home` composes (`HeroSection`, `ExperienceSection`, `ProjectsSection`, etc.).
+- Content is data-driven: `data/projects.js`, `data/experiences.js`, `data/caseStudies.js`, `data/notes.js` are plain arrays/objects consumed by the corresponding page/section. Adding a project, experience entry, case study, or note means editing these files, not JSX.
+- **Theme colors live in two places and must be edited together.** `constants/colors.js` is documentation only - nothing imports it. The values that actually render are the hardcoded hex literals in `src/index.css` (`:root` for light, `.dark` for dark), exposed to Tailwind as CSS variables in `tailwind.config.js`. Editing `colors.js` alone changes nothing. The palette values are WCAG AA contrast-checked against their backgrounds (ratios noted in comments in `colors.js`); if you change a `foreground-*` value, re-check it rather than picking by eye.
+- The `dark` class is toggled by `context/ThemeContext.jsx` (persisted to `localStorage`, defaults to system preference). `index.html` has an inline pre-hydration script that sets the class before React mounts, to avoid a flash of the wrong theme - keep that in sync with `ThemeContext.jsx`'s logic if theme defaulting ever changes.
 - In-page section links (`#experience`) are handled specially in `App.jsx` (`handleNavClick`) to support navigating to a hash from a different route, then scrolling.
+
+### Content data shapes
+
+These flags exist because the same arrays feed more than one surface. Respect them when adding entries:
+
+- `experiences.js` - each entry has `current: true|false` (drives the "currently" vs "previously" split; do **not** go back to inferring this from date strings) and `bullets: [{ text, link?, linkLabel? }]`. One bullet per distinct project or workstream.
+- `projects.js` - `caseStudy` (internal route; makes the title link internally instead of to `demo`/`github`), `showOnHome: false` (keep off the home page's featured three but still list on `/projects`), `earlier: true` (group under "earlier work" on `/projects`), `imageContain: true` (logo-style image needing `object-contain` on white rather than `object-cover`).
+- `caseStudies.js` - keyed by URL slug, rendered at `/projects/:slug`. Each section is either `{ heading, body: [paragraphs] }` or `{ heading, items: [{ title, body }] }`. Section order is deliberate: problem and stakes first, hard engineering problems before the delivery/velocity narrative, deep architecture after that, outcome last.
+
+### Accessibility baseline
+
+The site is a portfolio for a developer who claims accessibility experience, so regressions here are worse than cosmetic. Already in place and worth preserving: WCAG AA contrast on all text tokens, a `:focus-visible` outline rule in `index.css`, a `.skip-link` to `#main`, `prefers-reduced-motion` handling, `aria-label` on the nav, and `<main>`/`<footer>` landmarks in `App.jsx`. New interactive UI should be keyboard-operable and labelled.

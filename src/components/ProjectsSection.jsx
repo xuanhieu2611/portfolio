@@ -25,7 +25,9 @@ const HighlightText = ({ text }) => {
 }
 
 export default function ProjectsSection() {
-  const featuredProjects = projects.slice(0, 3) // Show top 3 projects
+  const featuredProjects = projects
+    .filter((project) => project.showOnHome !== false)
+    .slice(0, 3)
 
   const getProjectIcon = (title) => {
     if (title.includes("Hydro AI")) return "💧"
@@ -41,7 +43,7 @@ export default function ProjectsSection() {
     <section id="projects" className="py-8">
       <div className="flex items-center gap-2 mb-6">
         <span className="text-foreground-muted text-sm italic font-medium">
-          ♦ other things i've been building:
+          ♦ other things i&apos;ve been building:
         </span>
       </div>
 
@@ -54,19 +56,32 @@ export default function ProjectsSection() {
                   src={project.image}
                   alt=""
                   aria-hidden="true"
-                  className="w-5 h-5 rounded-[0.3rem] object-cover"
+                  className={`w-5 h-5 rounded-[0.3rem] ${
+                    project.imageContain
+                      ? "object-contain bg-white p-px"
+                      : "object-cover"
+                  }`}
                 />
               ) : (
                 <span className="text-base">{getProjectIcon(project.title)}</span>
               )}
-              <a
-                href={project.demo || project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground font-bold text-sm hover:underline decoration-foreground-subtle underline-offset-2 transition-all"
-              >
-                {project.title}
-              </a>
+              {project.caseStudy ? (
+                <Link
+                  to={project.caseStudy}
+                  className="text-foreground font-bold text-sm hover:underline decoration-foreground-subtle underline-offset-2 transition-all"
+                >
+                  {project.title}
+                </Link>
+              ) : (
+                <a
+                  href={project.demo || project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground font-bold text-sm hover:underline decoration-foreground-subtle underline-offset-2 transition-all"
+                >
+                  {project.title}
+                </a>
+              )}
               <div className="flex items-center gap-2 ml-1">
                 {project.github && (
                   <a
@@ -89,6 +104,14 @@ export default function ProjectsSection() {
                   >
                     <ExternalLink className="w-3 h-3" />
                   </a>
+                )}
+                {project.caseStudy && (
+                  <Link
+                    to={project.caseStudy}
+                    className="text-[10px] font-mono text-foreground-subtle hover:text-foreground transition-colors"
+                  >
+                    case study ↗
+                  </Link>
                 )}
               </div>
             </div>

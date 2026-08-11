@@ -1,15 +1,19 @@
 import { ExternalLink } from "lucide-react"
+import { Link } from "react-router-dom"
 import { experiences } from "../data/experiences"
 
 const HighlightText = ({ text }) => {
-  const parts = text.split(/(Winner of [^.]+|97% recall|3M\+ views)/g)
+  const parts = text.split(
+    /(Winner of [^.]+|97% recall|3M\+ views|200\+ bookable rooms)/g
+  )
   return (
     <>
       {parts.map((part, i) => {
         if (
           part.startsWith("Winner") ||
           part.includes("97%") ||
-          part.includes("views")
+          part.includes("views") ||
+          part.includes("bookable rooms")
         ) {
           return (
             <span key={i} className="text-foreground font-medium">
@@ -61,12 +65,8 @@ const CompanyIcon = ({ company }) => {
 }
 
 export default function ExperienceSection() {
-  const current = experiences.filter(
-    (exp) => exp.period.includes("Present") || exp.period.includes("2026"),
-  )
-  const past = experiences.filter(
-    (exp) => !exp.period.includes("Present") && !exp.period.includes("2026"),
-  )
+  const current = experiences.filter((exp) => exp.current)
+  const past = experiences.filter((exp) => !exp.current)
 
   return (
     <section id="experience" className="space-y-8">
@@ -130,15 +130,28 @@ function ExperienceItem({ exp }) {
         </h3>
       </div>
 
-      <div className="flex gap-3 mt-1">
-        <span className="text-foreground-subtle select-none text-sm leading-tight font-mono">
-          ↳
-        </span>
-        <div className="space-y-2">
-          <p className="text-foreground-muted text-sm leading-tight max-w-xl">
-            <HighlightText text={exp.description} />
-          </p>
-        </div>
+      <div className="space-y-2 mt-1">
+        {exp.bullets.map((bullet, i) => (
+          <div key={i} className="flex gap-3">
+            <span className="text-foreground-subtle select-none text-sm leading-tight font-mono">
+              ↳
+            </span>
+            <p className="text-foreground-muted text-sm leading-tight max-w-xl">
+              <HighlightText text={bullet.text} />
+              {bullet.link && (
+                <>
+                  {" "}
+                  <Link
+                    to={bullet.link}
+                    className="text-foreground-muted hover:text-foreground underline decoration-foreground-subtle underline-offset-2 transition-colors whitespace-nowrap"
+                  >
+                    {bullet.linkLabel} ↗
+                  </Link>
+                </>
+              )}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   )

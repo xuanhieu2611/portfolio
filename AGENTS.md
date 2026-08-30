@@ -11,6 +11,14 @@ This is **not just a portfolio site**. It's Hieu's personal Vercel deployment (h
 
 Because of this, changes to one area (e.g. portfolio styling) should not leak into or assume anything about the others. When asked to work on "the site," clarify/infer which of these four surfaces is actually meant.
 
+## Private working docs (gitignored - never commit)
+
+**This repo is public.** `Resume.pdf` and `ResumeMaster.md` sit in the repo root
+but are gitignored: `ResumeMaster.md` is the bullet bank and tailoring notes for
+Hieu's resume work-experience section. Read it before editing resume copy or
+`src/data/experiences.js` - the resume and the site must agree on every figure.
+Do not commit either file, and do not link them from the site.
+
 ## Commands
 
 - `npm run dev` - start Vite dev server

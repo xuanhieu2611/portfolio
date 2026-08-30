@@ -2,19 +2,18 @@ import { ExternalLink } from "lucide-react"
 import { Link } from "react-router-dom"
 import { experiences } from "../data/experiences"
 
+// Phrases worth pulling out of the surrounding muted body text. Keep the
+// source and the test in sync - the test is the same alternation, anchored.
+const HIGHLIGHT_SOURCE =
+  "Winner of [^.]+|97% recall|3M\\+ views|400\\+ bookable rooms|up to 80%|by 85%|by 40%"
+
 const HighlightText = ({ text }) => {
-  const parts = text.split(
-    /(Winner of [^.]+|97% recall|3M\+ views|200\+ bookable rooms)/g
-  )
+  const parts = text.split(new RegExp(`(${HIGHLIGHT_SOURCE})`, "g"))
+  const isHighlight = new RegExp(`^(?:${HIGHLIGHT_SOURCE})$`)
   return (
     <>
       {parts.map((part, i) => {
-        if (
-          part.startsWith("Winner") ||
-          part.includes("97%") ||
-          part.includes("views") ||
-          part.includes("bookable rooms")
-        ) {
+        if (isHighlight.test(part)) {
           return (
             <span key={i} className="text-foreground font-medium">
               {part}

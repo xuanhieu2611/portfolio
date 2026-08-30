@@ -60,7 +60,7 @@ export default function HeroSection() {
               Spaces
             </InlineLink>
             , a production booking and approvals platform at the UBC Faculty of
-            Medicine running 200+ rooms province-wide - empty repository to
+            Medicine running 400+ rooms province-wide - empty repository to
             production in six months, replacing a system they had been stuck
             with for twenty years.
           </p>

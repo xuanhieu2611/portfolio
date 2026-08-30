@@ -2,7 +2,7 @@ export const projects = [
   {
     title: "Spaces",
     description:
-      "Production room, resource, and approval-workflow platform for the UBC Faculty of Medicine - architected and built end-to-end as the sole engineer, managing 200+ bookable rooms across sites province-wide",
+      "Production room, resource, and approval-workflow platform for the UBC Faculty of Medicine - architected and built end-to-end as the sole engineer, managing 400+ bookable rooms across sites province-wide",
     technologies: [
       "Next.js",
       "React 19",

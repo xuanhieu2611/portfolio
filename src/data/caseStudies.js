@@ -2,7 +2,7 @@ export const caseStudies = {
   spaces: {
     title: "Spaces",
     tagline:
-      "A production room, resource, and approval-workflow platform for the UBC Faculty of Medicine, replacing a twenty-year-old system the vendor had abandoned. Designed, architected, and built end-to-end as the sole engineer - empty repository to production in six months.",
+      "A production room, resource, and approval-workflow platform for the UBC Faculty of Medicine, replacing a twenty-year-old system the vendor had abandoned, along with the two in-house applications the Faculty built to work around it. Designed, architected, and built end-to-end as the sole engineer - empty repository to production in six months.",
     role: "Sole application engineer",
     org: "UBC Faculty of Medicine",
     period: "Feb 2026 – present",
@@ -25,7 +25,7 @@ export const caseStudies = {
       { value: "6 mo", label: "empty repo to production" },
       { value: "1", label: "engineer on the project" },
       { value: "113K", label: "lines of TypeScript" },
-      { value: "200+", label: "bookable rooms province-wide" },
+      { value: "400+", label: "bookable rooms province-wide" },
       { value: "220+", label: "reviewed pull requests" },
       { value: "48", label: "test suites, ~745 assertions" },
     ],
@@ -33,7 +33,7 @@ export const caseStudies = {
       {
         heading: "the problem",
         body: [
-          "For roughly twenty years, the Faculty's resource coordinating team ran on FM:Systems Resource Scheduler - a product shaped like hotel reservation software, being used to manage teaching rooms, clinical spaces, and shared equipment. The fit was never right, and it decayed. The team accumulated workarounds for things the software simply could not express. The vendor was acquired and support effectively ended, leaving them paying a significant annual licence for a system nobody maintained anymore.",
+          "For roughly twenty years, the Faculty's resource coordinating team ran on FM:Systems Resource Scheduler - a product shaped like hotel reservation software, being used to manage teaching rooms, clinical spaces, and shared equipment. The fit was never right, and it decayed. The team accumulated workarounds for things the software simply could not express - including two applications UBC built and maintained in-house, Room Finder and Advanced Booking Manager, propping up the gaps Resource Scheduler left. The vendor was acquired and support effectively ended, leaving them paying a significant annual licence for a system nobody maintained anymore, plus two internal apps to keep alive alongside it.",
           "They had been looking for a replacement for years and could not find one. The requirements are specific enough to the Faculty of Medicine - its approval hierarchies, its contested teaching spaces, its province-wide distributed sites - that no off-the-shelf product addresses them, and building in-house had always been priced as a multi-engineer, multi-year effort nobody wanted to fund.",
           "My manager had seen how quickly I was moving with AI-assisted development and suggested I prototype it instead. The prototype became the project. I took it from an empty repository to a system running in production, owning every layer: the relational data model, the domain logic, the API surface, the entire frontend and design system, the AWS infrastructure, the security and identity model, the test strategy, the documentation, and the stakeholder conversations that decided what got built and in what order.",
         ],
@@ -105,7 +105,7 @@ export const caseStudies = {
         heading: "outcome",
         body: [
           "Spaces runs in production with a pilot cohort of faculty staff and is scheduled for full cutover from the legacy system. I built the migration tooling that reads reservations out of the legacy Resource Scheduler REST API and imports them into the new schema, ran the phased rollout, and fed user feedback back into the product through weekly demos.",
-          "It replaces a system the coordinating team had been stuck with for two decades, and it improves both sides of the transaction at once - the coordinators get approval workflows, conflict detection, and audit trails that match how they actually work, and the faculty booking a room get a process that no longer requires knowing the workarounds. That second part is the reason the feedback has been what it has been.",
+          "It replaces all three - the vendor system the coordinating team had been stuck with for two decades and the two in-house apps holding it together - and it improves both sides of the transaction at once - the coordinators get approval workflows, conflict detection, and audit trails that match how they actually work, and the faculty booking a room get a process that no longer requires knowing the workarounds. That second part is the reason the feedback has been what it has been.",
           "Beyond the code, I gathered requirements directly from faculty stakeholders, translated a PRD into a delivery roadmap, reviewed and merged contributions from a DevOps collaborator and other developers, wrote 32 architecture and feature documents so the platform could survive handoff, and presented a full walkthrough to engineering managers, senior developers, solution architects, and cloud engineers.",
           "The Faculty has since offered me a continuing part-time engineering role to carry the platform through full migration and beyond.",
         ],

@@ -54,19 +54,16 @@ export default function HeroSection() {
 
         <div className="space-y-4 max-w-xl">
           <p className="text-foreground text-lg leading-relaxed">
-            I&apos;m a software developer who likes owning things end to end.
             I&apos;m the sole engineer on{" "}
             <InlineLink to="/projects/spaces" logo="/ubc-logo.png" alt="UBC">
               Spaces
-            </InlineLink>
-            , a production booking and approvals platform at the UBC Faculty of
-            Medicine running 400+ rooms province-wide - empty repository to
-            production in six months, replacing a system they had been stuck
-            with for twenty years.
+            </InlineLink>{" "}
+            at UBC Medicine, used by faculty, staff, and students across the
+            province - empty repo to production in six months.
           </p>
 
           <p className="text-foreground text-lg leading-relaxed">
-            Outside of work I build and ship mobile apps, mostly around AI.{" "}
+            Outside of work I ship mobile apps.{" "}
             <InlineLink
               href="https://apps.apple.com/ca/app/hydro-ai-water-tracker/id6785374266"
               logo="/hydro-ai-icon.png"
@@ -74,9 +71,7 @@ export default function HeroSection() {
             >
               Hydro AI
             </InlineLink>{" "}
-            is on the App Store - a photo-first hydration tracker that uses
-            Claude Vision to estimate what you drank, with subscriptions and
-            social streaks.
+            is on the App Store.
           </p>
 
           <p className="text-foreground-muted text-base leading-relaxed">
@@ -84,8 +79,8 @@ export default function HeroSection() {
             <InlineLink href="https://www.ubc.ca" logo="/ubc-logo.png" alt="UBC">
               UBC
             </InlineLink>
-            , graduating April 2027. I&apos;m looking for new-grad software
-            engineering roles - full-stack, backend, or AI-focused.{" "}
+            , graduating April 2027. Looking for new-grad software engineering
+            roles.{" "}
             <a
               href="mailto:hieulexuan261103@gmail.com"
               className="text-foreground underline decoration-foreground-subtle underline-offset-2 hover:decoration-foreground transition-colors"

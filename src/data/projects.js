@@ -2,7 +2,7 @@ export const projects = [
   {
     title: "Spaces",
     description:
-      "Production room, resource, and approval-workflow platform for the UBC Faculty of Medicine - architected and built end-to-end as the sole engineer, managing 400+ bookable rooms across sites province-wide",
+      "Booking platform at UBC Medicine. Sole engineer, empty repo to production in six months",
     technologies: [
       "Next.js",
       "React 19",
@@ -24,7 +24,7 @@ export const projects = [
   {
     title: "Hydro AI",
     description:
-      "Production-ready, photo-first hydration app - Claude Vision estimates a drink's volume and hydration value, with streaks, social accountability, subscriptions, and privacy-first image handling",
+      "Photo-first hydration tracker on the App Store - Claude Vision estimates the drink, with subscriptions and streaks",
     technologies: [
       "React Native",
       "Expo",
@@ -36,6 +36,16 @@ export const projects = [
     github: "https://github.com/xuanhieu2611/Hydro-AI",
     demo: "https://apps.apple.com/ca/app/hydro-ai-water-tracker/id6785374266",
     image: "/hydro-ai-icon.png",
+  },
+  {
+    title: "Stride AI",
+    description:
+      "iOS running coach that writes a plan and updates it from your recent activity",
+    technologies: ["Swift", "SwiftUI", "Firebase", "HealthKit"],
+    github: null,
+    demo: "https://getstrideai.com/",
+    image: "/stride-logo.png",
+    imageContain: true,
   },
   {
     title: "SumUp Sundae",
@@ -59,16 +69,6 @@ export const projects = [
     technologies: ["Next.js", "Gemini API", "ElevenLabs", "TypeScript", "PWA"],
     github: "https://github.com/xuanhieu2611/Sightline",
     demo: "https://sightline-xi.vercel.app/describe",
-  },
-  {
-    title: "Stride AI",
-    description:
-      "iOS running coach that generates personalized training plans and adapts workouts to your recent activity",
-    technologies: ["Swift", "SwiftUI", "Firebase", "HealthKit"],
-    github: null,
-    demo: "https://getstrideai.com/",
-    image: "/stride-logo.png",
-    imageContain: true,
   },
   {
     title: "Stroke Detection Model",

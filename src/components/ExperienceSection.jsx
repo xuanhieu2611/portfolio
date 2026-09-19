@@ -5,7 +5,7 @@ import { experiences } from "../data/experiences"
 // Phrases worth pulling out of the surrounding muted body text. Keep the
 // source and the test in sync - the test is the same alternation, anchored.
 const HIGHLIGHT_SOURCE =
-  "Winner of [^.]+|97% recall|3M\\+ views|400\\+ bookable rooms|up to 80%|by 85%|by 40%"
+  "Winner of [^.]+|97% recall|3M\\+ views|20-year-old|up to 80%|40%"
 
 const HighlightText = ({ text }) => {
   const parts = text.split(new RegExp(`(${HIGHLIGHT_SOURCE})`, "g"))
@@ -123,10 +123,15 @@ function ExperienceItem({ exp }) {
             </a>
           )}
           <span className="text-foreground-subtle text-xs font-normal hidden sm:inline">
-            —
+            ·
           </span>
           <span className="text-foreground-muted font-normal">{exp.role}</span>
         </h3>
+        {exp.period && (
+          <span className="text-foreground-subtle text-xs font-mono pl-6 sm:pl-0">
+            {exp.period}
+          </span>
+        )}
       </div>
 
       <div className="space-y-2 mt-1">
